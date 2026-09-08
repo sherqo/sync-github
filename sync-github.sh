@@ -71,7 +71,7 @@ send_notification() {
   local title="$2"
   local message="$3"
   if [ "$ENABLE_NOTIFY" = true ] && command -v notify-send >/dev/null 2>&1; then
-    notify-send -u "$urgency" "$title" "$message"
+    notify-send -u "$urgency" -t 10000 "$title" "$message"
   fi
 }
 
